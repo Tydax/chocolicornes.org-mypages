@@ -1,0 +1,19 @@
+/*
+ * File: list_of_users.json
+ */
+
+ {
+    Armand: {
+        name: "Armand BOUR",
+        imgUrl: "",
+        birthDate: "29/07/1993",
+        quote: "I make cool things!"
+
+    }
+
+    Arnaud: {
+        name: "Arnaud COJEZ"
+        imgUrl: "",
+        birthDate: "05/04/1993"
+    }
+ }
