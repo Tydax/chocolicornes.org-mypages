@@ -2,10 +2,10 @@
  * File: list_of_users.json
  */
 
- {
+[
     Armand: {
         name: "Armand BOUR",
-        imgUrl: "",
+        imgUrl: "img/pandasquare250.png",
         birthDate: "29/07/1993",
         quote: "I make cool things!"
 
@@ -15,5 +15,6 @@
         name: "Arnaud COJEZ"
         imgUrl: "",
         birthDate: "05/04/1993"
+        quote: "I love opensource!"
     }
- }
+]
