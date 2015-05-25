@@ -1,20 +1,15 @@
-/*
- * File: list_of_users.json
- */
-
 [
-    Armand: {
-        name: "Armand BOUR",
-        imgUrl: "img/pandasquare250.png",
-        birthDate: "29/07/1993",
-        quote: "I make cool things!"
+    {
+        "name": "Armand BOUR",
+        "imgUrl": "img/panda_square250.png",
+        "birthDate": "29/07/1993",
+        "quote": "I make your interface fabulous!"
+    },
 
-    }
-
-    Arnaud: {
-        name: "Arnaud COJEZ"
-        imgUrl: "",
-        birthDate: "05/04/1993"
-        quote: "I love opensource!"
+    {
+        "name": "Arnaud COJEZ",
+        "imgUrl": "img/mimiemathy_square250.png",
+        "birthDate": "05/04/1993",
+        "quote": "I love free softwares!"
     }
 ]
