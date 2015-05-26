@@ -1,5 +1,6 @@
 /*
  * Script to load the data from users and display links
+ * @author: Armand (Tydax) BOUR
  */
 
 /* Load the data contained in the specified "filename" file and calls the specified function "callback" */
@@ -25,11 +26,11 @@ function loadData(filename, callback) {
 /* Returns a generated li block from the specified "user" object */
 function generateLinkLi(user) {
     var liNode = document.createElement("li");
-    liNode.style.clear = "both";
-    liNode.style.padding = "5px";
+    liNode.className += " " + user.className;
 
     // Create title element
-    var nameNode = document.createElement("h3");
+    var nameNode = document.createElement("h4");
+    nameNode.className += " listUsers_name"
     var nameText = document.createTextNode(user.name);
     nameNode.appendChild(nameText);
     liNode.appendChild(nameNode);
@@ -37,9 +38,8 @@ function generateLinkLi(user) {
     // Create img element
     var imgNode = document.createElement("img");
     imgNode.src = user.imgUrl;
-    imgNode.width = 50;
-    imgNode.style.float = "left";
-    imgNode.style.padding = "5px";
+    imgNode.width = 75;
+    imgNode.className += " listUsers_img";
     liNode.appendChild(imgNode);
 
     var quoteNode = document.createElement("p");
