@@ -13,11 +13,17 @@ body {
 }
 
 #body_center {
-    background-color: #404040;
-    box-shadow: inset 0 0 0 .1em hsla(0,0%,0%,.1),
-                0 .1em .25em hsla(0,0%,0%,.25);
+    background: silver;
+    background:
+        linear-gradient(135deg, transparent 20px, silver 0) top left,
+        linear-gradient(225deg, transparent 20px, silver 0) top right,
+        linear-gradient(315deg, transparent 20px, silver 0) bottom right,
+        linear-gradient(45deg,  transparent 20px, silver 0) bottom left;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
     margin-left: 30%;
     margin-right: 30%;
+    padding: 1px 0;
 }
 
 
@@ -28,22 +34,17 @@ body {
 }
 
 #listUsers {
-    border: 1px solid white;
+    background: #404040;
+    background:
+        linear-gradient(135deg, transparent 20px, #404040 0) top left,
+        linear-gradient(225deg, transparent 20px, #404040 0) top right,
+        linear-gradient(315deg, transparent 20px, #404040 0) bottom right,
+        linear-gradient(45deg,  transparent 20px, #404040 0) bottom left;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    padding: 10px;
     list-style: none;
-    position: relative;
-}
-
-#listUsers:after,
-#listUsers:before {
-    background-color: #252525;
-    border-right: 1px solid white;
-    color: #252525;
-    content: '.';
-    position: absolute;
-    top: -70px; left: -72px;
-    width: 100px;
-    height: 100px;
-    -webkit-transform: rotate(45deg);
+    margin: 0 1px;
 }
 
 #listUsers li {
