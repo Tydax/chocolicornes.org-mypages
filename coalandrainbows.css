@@ -2,6 +2,13 @@
  * @author: Armand (Tydax) BOUR
  */
 
+body, html, h1, header, main, ul
+{
+    margin:             0;
+    padding:            0;
+}
+
+
 body {
     background-color:       #252525;
     color:                  white;
@@ -26,14 +33,7 @@ body {
     padding: 1px 0;
 }
 
-
-/* List of users */
-
-.mediumyellow {
-    background-color: #f5cc44;
-}
-
-#listUsers {
+#bgListUsers {
     background: #404040;
     background:
         linear-gradient(135deg, transparent 20px, #404040 0) top left,
@@ -43,19 +43,42 @@ body {
     background-size: 50% 50%;
     background-repeat: no-repeat;
     padding: 10px;
-    list-style: none;
     margin: 0 1px;
+}
+
+#listUsers {
+    list-style: none;
+    margin: 25px 0;
 }
 
 #listUsers li {
     cursor: pointer;
+    height: 25px;
+    padding: 10px 0;
 }
 
 .listUsers_name {
-    text-align: right;
+    text-align: center;
 }
 
 .listUsers_img {
     border: 2px solid #252525;
     border-radius: 5px;
+    float: left;
+}
+
+/* List of users when hovering*/
+
+#listUsers .mediumyellow,
+    #listUsers .mediumgreen,
+    #listUsers .mediumblue {
+    height: 100px;
+}
+
+.mediumyellow {
+    background-color: #f5cc44;
+}
+
+.invisible {
+    display: none;
 }

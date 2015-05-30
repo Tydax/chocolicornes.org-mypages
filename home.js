@@ -23,10 +23,21 @@ function loadData(filename, callback) {
     xhr.send(null);
 }
 
+function calculateAge(birthDate, todayDate) {
+    return 20;
+}
+
 /* Returns a generated li block from the specified "user" object */
 function generateLinkLi(user) {
     var liNode = document.createElement("li");
-    liNode.className += " " + user.className;
+    liNode.className = user.className;
+
+    // Create img element
+    var imgNode = document.createElement("img");
+    imgNode.src = user.imgUrl;
+    imgNode.width = 75;
+    imgNode.className += " listUsers_img invisible";
+    liNode.appendChild(imgNode);
 
     // Create title element
     var nameNode = document.createElement("h4");
@@ -35,17 +46,41 @@ function generateLinkLi(user) {
     nameNode.appendChild(nameText);
     liNode.appendChild(nameNode);
 
-    // Create img element
-    var imgNode = document.createElement("img");
-    imgNode.src = user.imgUrl;
-    imgNode.width = 75;
-    imgNode.className += " listUsers_img";
-    liNode.appendChild(imgNode);
-
+    // Create quote element
     var quoteNode = document.createElement("p");
     var quoteText = document.createTextNode("“" + user.quote + "”");
+    quoteNode.className += " listUsers_quote invisible";
     quoteNode.appendChild(quoteText);
     liNode.appendChild(quoteNode);
+
+    // Create age element
+    var birthDate = user.birthDate;
+    var todayDate;
+    var age = calculateAge(birthDate, todayDate);
+    var ageNode = document.createElement("p");
+    var ageText = document.createTextNode("" + age + " ans");
+    ageNode.className += " listUsers_age invisible";
+    ageNode.appendChild(ageText);
+    liNode.appendChild(ageNode);
+
+    // Add function when hovering
+    liNode.addEventListener("mouseover", function() {
+        liNode.className = user.className;
+
+        imgNode.className = "listUsers_img";
+        quoteNode.className = "listUsers_quote";
+        ageNode.className = "listUsers_age";
+
+    }, false);
+
+    liNode.addEventListener("mouseout", function() {
+        liNode.className = "";
+
+        imgNode.className += " invisible";
+        quoteNode.className += " invisible";
+        ageNode.className += " invisible";
+
+    }, false);
 
     return liNode;
 }

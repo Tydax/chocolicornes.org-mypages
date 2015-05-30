@@ -3,6 +3,7 @@
         "className": "mediumyellow",
         "name": "Armand BOUR",
         "imgUrl": "img/panda_square250.png",
+        "websiteUrl": "",
         "birthDate": "29/07/1993",
         "quote": "I make your interface fabulous!"
     },
@@ -11,14 +12,16 @@
         "className": "mediumblue",
         "name": "Arnaud COJEZ",
         "imgUrl": "img/mimiemathy_square250.png",
+        "websiteUrl": "",
         "birthDate": "05/04/1993",
         "quote": "I love free softwares!"
     },
 
     {
-        "className": "mediumGreen",
+        "className": "mediumgreen",
         "name": "Alexandre MOEVI",
         "imgUrl": "img/drmario_square.png",
+        "websiteUrl": "",
         "birthDate": "",
         "quote": "get r3kt"
     }
