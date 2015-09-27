@@ -3,6 +3,8 @@
  * @author: Armand (Tydax) BOUR
  */
 
+var currentUser;
+
 /* Load the data contained in the specified "filename" file and calls the specified function "callback" */
 function loadData(filename, callback) {
     // Load file
@@ -24,20 +26,23 @@ function loadData(filename, callback) {
 }
 
 function calculateAge(birthDate, todayDate) {
-    return 20;
+    var dataBirth = birthDate.split("/"),
+        dataToday = todayDate.split("/"),
+        age = dataToday[2] - dataBirth[2];
+
+    if (dataToday[1] <= dataBirth[1]) {
+        if (dataToday[1] < dataBirth[1] || dataToday[0] < dataBirth[0]) {
+            return age - 1;
+        }
+    }
+
+    return age;
 }
 
 /* Returns a generated li block from the specified "user" object */
 function generateLinkLi(user) {
     var liNode = document.createElement("li");
     liNode.className = user.className;
-
-    // Create img element
-    var imgNode = document.createElement("img");
-    imgNode.src = user.imgUrl;
-    imgNode.width = 75;
-    imgNode.className += " listUsers_img invisible";
-    liNode.appendChild(imgNode);
 
     // Create title element
     var nameNode = document.createElement("h4");
@@ -46,6 +51,16 @@ function generateLinkLi(user) {
     nameNode.appendChild(nameText);
     liNode.appendChild(nameNode);
 
+    // Create age element
+    var birthDate = user.birthDate;
+    var todayDate = "28/07/2015";
+    var age = calculateAge(birthDate, todayDate);
+    var ageNode = document.createElement("span");
+    var ageText = document.createTextNode(" (" + age + " ans)");
+    ageNode.className += " listUsers_age invisible";
+    ageNode.appendChild(ageText);
+    nameNode.appendChild(ageNode);
+
     // Create quote element
     var quoteNode = document.createElement("p");
     var quoteText = document.createTextNode("“" + user.quote + "”");
@@ -53,21 +68,11 @@ function generateLinkLi(user) {
     quoteNode.appendChild(quoteText);
     liNode.appendChild(quoteNode);
 
-    // Create age element
-    var birthDate = user.birthDate;
-    var todayDate;
-    var age = calculateAge(birthDate, todayDate);
-    var ageNode = document.createElement("p");
-    var ageText = document.createTextNode("" + age + " ans");
-    ageNode.className += " listUsers_age invisible";
-    ageNode.appendChild(ageText);
-    liNode.appendChild(ageNode);
 
     // Add function when hovering
     liNode.addEventListener("mouseover", function() {
         liNode.className = user.className;
-
-        imgNode.className = "listUsers_img";
+        updateImage(user.imgUrl);
         quoteNode.className = "listUsers_quote";
         ageNode.className = "listUsers_age";
 
@@ -75,20 +80,32 @@ function generateLinkLi(user) {
 
     liNode.addEventListener("mouseout", function() {
         liNode.className = "";
-
-        imgNode.className += " invisible";
+        updateImage(currentUser
+                  ? currentUser.imgUrl
+                  : "../img/null.png");
         quoteNode.className += " invisible";
         ageNode.className += " invisible";
 
     }, false);
 
+    // When clicking, keep it in focus
+    liNode.addEventListener("mouseclick", function() {
+        currentUser = user;
+    }, false);
+
+
     return liNode;
+}
+
+function updateImage(src) {
+    var imgNode = document.getElementById("info_user_pic");
+    imgNode.src = src;
 }
 
 /* Generates all the links loading the file */
 function generateAllLinks() {
-    var filename = "list_of_users.json";
-    var listId = "listUsers";
+    var filename = "../javascript/list_of_users.json";
+    var listId = "list_users";
 
     loadData(filename, function(response) {
         var users = JSON.parse(response);

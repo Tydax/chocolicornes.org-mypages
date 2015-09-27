@@ -1,0 +1,140 @@
+/*
+ * @author: Armand (Tydax) BOUR
+ */
+
+body, html, h1, header, main, ul
+{
+    margin:             0;
+    padding:            0;
+}
+
+
+body {
+    background-color:       #303030;
+    color:                  white;
+    font-family:            "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#header {
+    background-color: #404040;
+    box-shadow: 2px 2px 8px #303030;
+    border-bottom: 1px solid #303030;
+    color: white;
+    height: 50px;
+    line-height: 50px;
+}
+
+#header h1 {
+    margin-left: 25px;
+    font-size: 16px;
+}
+
+/* Body content part */
+
+#body_content {
+    margin: 30px 30px;
+}
+
+#body_content,
+ #side_panel,
+ #div_info_user {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: flex-start;
+}
+
+#body_content {
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+}
+
+#side_panel {
+    -webkit-flex-flow: column wrap;
+    flex-flow: column wrap;
+}
+
+#main_panel > div,
+ #side_panel > div {
+    border: 1px solid #404040;
+    border-radius: 5px;
+}
+
+#main_panel {
+    margin: 0 5px;
+    width: 58%;
+}
+
+#side_panel {
+    margin: 0 5px;
+    width: 36%;
+}
+
+/* User info part */
+
+#div_info_user {
+    padding: 5px;
+    position: relative;
+    min-height: 150px;
+}
+
+#info_user_pic {
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 125px;
+    position: absolute;
+    right: 5px;
+    text-align: right;
+    width: 125px;
+}
+
+/* List users part */
+
+#list_users {
+    list-style: none;
+}
+
+#list_users li {
+    cursor: pointer;
+    height: 25px;
+    padding: 10px 0;
+    border-radius: 4px;
+}
+
+.listUsers_name{
+    text-align: center;
+}
+
+.listUsers_quote {
+    font-style: italic;
+    text-align: center;
+}
+
+.listUsers_age {
+    text-align: right;
+}
+
+.listUsers_img {
+    border: 2px solid #252525;
+    border-radius: 5px;
+    float: left;
+    margin: 5px;
+}
+
+/* List of users when hovering */
+
+#list_users .mediumyellow,
+    #list_users .mediumgreen,
+    #list_users .mediumblue {
+    height: 100px;
+}
+
+.mediumyellow {
+    background-color: #f5cc44;
+}
+
+.invisible {
+    display: none;
+}
