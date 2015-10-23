@@ -15,6 +15,7 @@ body {
     font-family:            "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+/*
 #header {
     background-color: #404040;
     box-shadow: 2px 2px 8px #303030;
@@ -28,11 +29,33 @@ body {
     margin-left: 25px;
     font-size: 16px;
 }
+*/
+
+#header {
+    height: 100px;
+    margin: 0 auto;
+    margin-top: 25px;
+    text-align: center;
+    width: 70%;
+}
+
+#header_helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+#header_img {
+    vertical-align: middle;
+    width: 80%;
+}
 
 /* Body content part */
 
 #body_content {
-    margin: 30px 30px;
+    border-top: 0.3em solid white;
+    margin: 0 30px;
+    padding-top: 1em;
 }
 
 #body_content,
@@ -131,8 +154,27 @@ body {
     height: 100px;
 }
 
+@keyframes suus {
+    1% {
+        background: radial-gradient(circle, rgb(245, 204, 68) 1%, rgba(245, 204, 68, 0.1) 2%, transparent 3%);
+    }
+    50% {
+        background: radial-gradient(circle, rgb(245, 204, 68) 98%, rgba(245, 204, 68, 0.1) 99%, transparent 100%);
+    }
+}
+
+@keyframes saas {
+    0% {
+        background-color: red;
+    }
+    100% {
+        background-color: yellow;
+    }
+}
+
 .mediumyellow {
-    background-color: #f5cc44;
+    background-color: rgb(245, 204, 68);
+    /*animation: suus 10s 1;*/
 }
 
 .invisible {
