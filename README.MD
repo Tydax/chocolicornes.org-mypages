@@ -10,3 +10,7 @@ Idea list for the homepage:
 * Generate the page dynamically with a .json;
 * Add sexy animations;
 * Generate each profile using a .json contained in each page.
+
+Bugs:
+* When clicking twice on the same user, the background colour disappears.
+* The info stays on the right if you don't click anywhere.

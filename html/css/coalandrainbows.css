@@ -2,7 +2,7 @@
  * @author: Armand (Tydax) BOUR
  */
 
-body, html, h1, header, main, ul
+body, html, h1, header, main, ul, h4
 {
     margin:             0;
     padding:            0;
@@ -104,13 +104,18 @@ body {
 }
 
 #info_user_pic {
-    border: 1px solid black;
+    border: 1px solid white;
     border-radius: 5px;
     height: 125px;
     position: absolute;
     right: 5px;
     text-align: right;
     width: 125px;
+}
+
+#div_links_user {
+    margin-top: 5px;
+    min-height: 150px;
 }
 
 /* List users part */
@@ -120,61 +125,38 @@ body {
 }
 
 #list_users li {
-    cursor: pointer;
-    height: 25px;
-    padding: 10px 0;
     border-radius: 4px;
+    cursor: pointer;
+    height: 50px;
+    padding: 10px 0;
 }
 
-.listUsers_name{
+.list_users_name {
+    line-height: 50px;
     text-align: center;
 }
 
-.listUsers_quote {
+.user_info_quote {
     font-style: italic;
-    text-align: center;
-}
-
-.listUsers_age {
-    text-align: right;
-}
-
-.listUsers_img {
-    border: 2px solid #252525;
-    border-radius: 5px;
-    float: left;
-    margin: 5px;
 }
 
 /* List of users when hovering */
 
-#list_users .mediumyellow,
-    #list_users .mediumgreen,
-    #list_users .mediumblue {
-    height: 100px;
-}
-
-@keyframes suus {
-    1% {
-        background: radial-gradient(circle, rgb(245, 204, 68) 1%, rgba(245, 204, 68, 0.1) 2%, transparent 3%);
-    }
-    50% {
-        background: radial-gradient(circle, rgb(245, 204, 68) 98%, rgba(245, 204, 68, 0.1) 99%, transparent 100%);
-    }
-}
-
-@keyframes saas {
-    0% {
-        background-color: red;
-    }
-    100% {
-        background-color: yellow;
-    }
+#list_users .mediumyellow .list_users_name,
+    #list_users .mediumgreen .list_users_name,
+    #list_users .mediumblue .list_users_name{
 }
 
 .mediumyellow {
     background-color: rgb(245, 204, 68);
-    /*animation: suus 10s 1;*/
+}
+
+.mediumblue {
+    background-color: #2c47a0;
+}
+
+.mediumgreen {
+    background-color: #1c8e4f;
 }
 
 .invisible {

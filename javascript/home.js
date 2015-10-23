@@ -5,6 +5,7 @@
  */
 
 var currentUser;
+var currentLiNode;
 var userInfos = {};
 
 /* Load the data contained in the specified "filename" file and calls the specified function "callback" */
@@ -78,14 +79,14 @@ function generateUserInfoDiv(user) {
     var age = calculateAge(birthDate);
     var ageNode = document.createElement("p");
     var ageText = document.createTextNode(age + " ans");
-    ageNode.className += " user_info_age";
+    ageNode.className = "user_info_age";
     ageNode.appendChild(ageText);
     divNode.appendChild(ageNode);
 
     // Create quote element
     var quoteNode = document.createElement("p");
     var quoteText = document.createTextNode("“" + user.quote + "”");
-    quoteNode.className += " user_info_quote";
+    quoteNode.className = "user_info_quote";
     quoteNode.appendChild(quoteText);
     divNode.appendChild(quoteNode);
 
@@ -93,26 +94,29 @@ function generateUserInfoDiv(user) {
 }
 
 /* Returns a generated li block from the specified "user" object */
-function generateLinkLi(user) {
+function generateLi(user) {
     var liNode = document.createElement("li");
-    liNode.id = "list_users_"
-    liNode.className = user.className;
+    liNode.id = "list_users_" + user.name;
 
     // Create title element
     var nameNode = document.createElement("h4");
-    nameNode.className += " listUsers_name"
+    nameNode.className = "list_users_name"
     var nameText = document.createTextNode(user.name);
     nameNode.appendChild(nameText);
     liNode.appendChild(nameNode);
 
     // Add function when hovering
     liNode.addEventListener("mouseover", function() {
-        liNode.className = user.className;
+        if (liNode != currentLiNode) {
+            liNode.className = user.className;
+        }
         showUserInfo(user);
     }, false);
 
     liNode.addEventListener("mouseout", function() {
-        liNode.className = "";
+        if (liNode.className.indexOf("selected") == -1) {
+            liNode.className = "";
+        }
 
         if (currentUser) {
             showUserInfo(currentUser);
@@ -124,6 +128,13 @@ function generateLinkLi(user) {
 
     // When clicking, keep it in focus
     liNode.addEventListener("click", function() {
+        liNode.className += " selected";
+        // Deselected currently selected node
+        if (currentLiNode) {
+            currentLiNode.className = "";
+        }
+
+        currentLiNode = liNode;
         currentUser = user;
     }, false);
 
@@ -149,7 +160,7 @@ function showUserInfo(user) {
 
 /* Generates all the links loading the file */
 function generateAllLinks() {
-    var filename = "../javascript/list_of_users.json";
+    var filename = "javascript/list_of_users.json";
     var listId = "list_users";
 
     loadData(filename, function(response) {
@@ -158,7 +169,7 @@ function generateAllLinks() {
 
         for (var i = 0; i < users.length; i++) {
             userInfos[users[i].name] = generateUserInfoDiv(users[i]);
-            var userNode = generateLinkLi(users[i]);
+            var userNode = generateLi(users[i]);
             listUsersNode.appendChild(userNode); 
         };
     });
