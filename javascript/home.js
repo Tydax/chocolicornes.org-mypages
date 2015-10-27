@@ -118,19 +118,14 @@ function generateLi(user) {
             liNode.className = "";
         }
 
-        if (currentUser) {
-            showUserInfo(currentUser);
-        }
-        else {
-            updateImage("../img/null.png");
-        }
+        showUserInfo(currentUser);
     }, false);
 
     // When clicking, keep it in focus
     liNode.addEventListener("click", function() {
         liNode.className += " selected";
         // Deselected currently selected node
-        if (currentLiNode) {
+        if (currentLiNode && currentLiNode != liNode) {
             currentLiNode.className = "";
         }
 
@@ -147,15 +142,19 @@ function updateImage(src) {
 }
 
 function showUserInfo(user) {
-    updateImage(user.imgUrl);
     var baseInfo = document.getElementById("div_info_user_infos");
 
     // Cleaning base info div
     for (var i = 0; i < baseInfo.children.length; i++) {
         baseInfo.removeChild(baseInfo.children[i]);
     };
-
-    baseInfo.appendChild(userInfos[user.name]);
+    
+    if (user) {
+        updateImage(user.imgUrl);
+        baseInfo.appendChild(userInfos[user.name]);
+    } else {
+        updateImage("img/null.png");
+    }
 }
 
 /* Generates all the links loading the file */

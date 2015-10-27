@@ -34,7 +34,7 @@ body {
 #header {
     height: 100px;
     margin: 0 auto;
-    margin-top: 25px;
+    margin-top: 0.3em;
     text-align: center;
     width: 70%;
 }
@@ -53,8 +53,8 @@ body {
 /* Body content part */
 
 #body_content {
-    border-top: 0.3em solid white;
-    margin: 0 30px;
+    border-top: 0.1em solid white;
+    margin: 0 2em;
     padding-top: 1em;
 }
 
@@ -148,7 +148,7 @@ body {
 }
 
 .mediumyellow {
-    background-color: rgb(245, 204, 68);
+    background-color: #dbb846;
 }
 
 .mediumblue {
