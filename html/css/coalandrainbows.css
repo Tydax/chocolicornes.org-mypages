@@ -31,7 +31,7 @@ body {
 }
 */
 
-#header {
+/*#header {
     height: 100px;
     margin: 0 auto;
     margin-top: 0.3em;
@@ -48,14 +48,15 @@ body {
 #header_img {
     vertical-align: middle;
     width: 80%;
-}
+}*/
+
 
 /* Body content part */
 
 #body_content {
-    border-top: 0.1em solid white;
+/*    border-top: 0.1em solid white;
     margin: 0 2em;
-    padding-top: 1em;
+    padding-top: 1em;*/
 }
 
 #body_content,
@@ -79,53 +80,55 @@ body {
     flex-flow: column wrap;
 }
 
-#main_panel > div,
- #side_panel > div {
-    border: 1px solid #404040;
-    border-radius: 5px;
-}
-
 #main_panel {
-    margin: 0 5px;
-    width: 58%;
+    width: 62%;
 }
 
 #side_panel {
-    margin: 0 5px;
-    width: 36%;
+    background-color: #202020;
+    width: 38%;
 }
 
 /* User info part */
 
 #div_info_user {
-    padding: 5px;
+    padding: 0 5px;
     position: relative;
     min-height: 150px;
 }
 
 #info_user_pic {
-    border: 1px solid white;
-    border-radius: 5px;
+    background-color: #202020;
+    border: 15px solid #202020;
+/*    border-right: none;
+    border-top: none;*/
     height: 125px;
     position: absolute;
-    right: 5px;
+    right: 0;
     text-align: right;
     width: 125px;
 }
 
 #div_links_user {
     margin-top: 5px;
-    min-height: 150px;
 }
 
 /* List users part */
 
 #list_users {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: column;
+    justify-content: stretch;
     list-style: none;
+    height: 100%;
 }
 
 #list_users li {
-    border-radius: 4px;
+    /*border-radius: 4px;*/
     cursor: pointer;
     height: 50px;
     padding: 10px 0;
