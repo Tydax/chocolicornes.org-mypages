@@ -94,9 +94,12 @@ function generateUserInfoDiv(user) {
 }
 
 /* Returns a generated li block from the specified "user" object */
-function generateLi(user) {
-    var liNode = document.createElement("li");
+function generateLink(user) {
+    var liNode = document.createElement("div");
+    liNode.className = "list_user_link";
     liNode.id = "list_users_" + user.name;
+
+    var userInfoNode = document.getElementById("div_info_user");
 
     // Create title element
     var nameNode = document.createElement("h4");
@@ -108,14 +111,14 @@ function generateLi(user) {
     // Add function when hovering
     liNode.addEventListener("mouseover", function() {
         if (liNode != currentLiNode) {
-            liNode.className = user.className;
+            liNode.className = "list_user_link " + user.className;
         }
         showUserInfo(user);
     }, false);
 
     liNode.addEventListener("mouseout", function() {
         if (liNode.className.indexOf("selected") == -1) {
-            liNode.className = "";
+            liNode.className = "list_user_link";
         }
 
         showUserInfo(currentUser);
@@ -123,12 +126,13 @@ function generateLi(user) {
 
     // When clicking, keep it in focus
     liNode.addEventListener("click", function() {
-        liNode.className += " selected";
+        liNode.className = "list_user_link selected " + user.className;
         // Deselected currently selected node
         if (currentLiNode && currentLiNode != liNode) {
-            currentLiNode.className = "";
+            currentLiNode.className = "list_user_link";
         }
 
+        userInfoNode.className = user.className;
         currentLiNode = liNode;
         currentUser = user;
     }, false);
@@ -168,7 +172,7 @@ function generateAllLinks() {
 
         for (var i = 0; i < users.length; i++) {
             userInfos[users[i].name] = generateUserInfoDiv(users[i]);
-            var userNode = generateLi(users[i]);
+            var userNode = generateLink(users[i]);
             listUsersNode.appendChild(userNode); 
         };
     });
