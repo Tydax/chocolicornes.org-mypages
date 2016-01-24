@@ -55,8 +55,12 @@ html, body {
 
 #main_panel, #side_panel {
     background-color: white;
-    border-radius: 0.1em;
 }
+
+/* TODO: update border-radius*/
+#main_panel, #side_panel {
+    border-radius: 0.1em;
+}    
 
 #side_panel {
     -webkit-flex-flow: column wrap;
