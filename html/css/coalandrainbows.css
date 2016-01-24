@@ -37,12 +37,6 @@ html, body {
     justify-content: flex-start;
 }
 
-#body_content 
-
-
-#div_info_user {
-}
-
 #body_content {
     -webkit-flex-flow: row wrap;
     flex-flow: row wrap;
@@ -58,9 +52,21 @@ html, body {
 }
 
 /* TODO: update border-radius*/
-#main_panel, #side_panel {
-    border-radius: 0.1em;
-}    
+#main_panel, #main_panel :first-child {
+    border-top-left-radius: 0.1em;
+}
+
+#main_panel {
+    border-bottom-left-radius: 0.1em;
+}
+
+#side_panel, #side_panel :first-child {
+    border-top-right-radius: 0.1em;
+}
+
+#side_panel, #side_panel :last-child {
+    border-bottom-right-radius: 0.1em;
+}
 
 #side_panel {
     -webkit-flex-flow: column wrap;
@@ -88,8 +94,7 @@ html, body {
 
 #info_user_pic {
     background-color: #202020;
-    border-top: none;
-    border-right: none;
+    border-left: #202020
     height: 150px;
     position: absolute;
     right: 0;

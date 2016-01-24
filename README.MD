@@ -8,8 +8,7 @@ This is a repository for the pages that I developped for the [chocolicornes.org]
 
 ## To-do
 Idea list for the homepage:
-* Have a decent design;
-* Generate the page dynamically with a .json;
+* Create a small thumbnail for each person, and click on it to access the information;
 * Add sexy animations;
 * Generate each profile using a .json contained in each page.
 
