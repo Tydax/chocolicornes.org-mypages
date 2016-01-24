@@ -2,7 +2,7 @@
     {
         "className": "mediumyellow",
         "name": "Tydax",
-        "imgUrl": "img/panda_square250.png",
+        "imgURL": "img/panda_square250.png",
         "links": [],
         "birthDate": "29/07/1993",
         "quote": "I make your interface fabulous!"
@@ -11,7 +11,7 @@
     {
         "className": "mediumblue",
         "name": "non0w",
-        "imgUrl": "img/mimiemathy_square250.png",
+        "imgURL": "img/mimiemathy_square250.png",
         "links": [],
         "birthDate": "05/04/1993",
         "quote": "I love free software!"
@@ -20,7 +20,7 @@
     {
         "className": "mediumgreen",
         "name": "T-Brawl",
-        "imgUrl": "img/drmario_square.png",
+        "imgURL": "img/drmario_square.png",
         "links": [],
         "birthDate": "22/06/1990",
         "quote": "get r3kt"

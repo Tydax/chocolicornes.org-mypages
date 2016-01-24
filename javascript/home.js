@@ -95,19 +95,21 @@ function generateUserInfoDiv(user) {
 
 /* Returns a generated li block from the specified "user" object */
 function generateLink(user) {
-    var liNode = document.createElement("div");
-    liNode.className = "list_user_link";
-    liNode.id = "list_users_" + user.name;
+    var divNode = document.createElement("div");
+    divNode.className = "list_user_link " + user.className;
+    divNode.id = "list_users_" + user.name;
 
     var userInfoNode = document.getElementById("div_info_user");
 
-    // Create title element
-    var nameNode = document.createElement("h4");
-    nameNode.className = "list_users_name"
-    var nameText = document.createTextNode(user.name);
-    nameNode.appendChild(nameText);
-    liNode.appendChild(nameNode);
+    var imgNode = document.createElement("img");
+    imgNode.className = "list_user_img";
+    imgNode.src = user.imgURL;
+    imgNode.width = 125;
+    imgNode.height = 125;
 
+    divNode.appendChild(imgNode);
+
+    /*
     // Add function when hovering
     liNode.addEventListener("mouseover", function() {
         if (liNode != currentLiNode) {
@@ -135,9 +137,9 @@ function generateLink(user) {
         userInfoNode.className = user.className;
         currentLiNode = liNode;
         currentUser = user;
-    }, false);
+    }, false); */
 
-    return liNode;
+    return divNode;
 }
 
 function updateImage(src) {
@@ -154,7 +156,7 @@ function showUserInfo(user) {
     };
     
     if (user) {
-        updateImage(user.imgUrl);
+        updateImage(user.imgURL);
         baseInfo.appendChild(userInfos[user.name]);
     } else {
         updateImage("img/null.png");
@@ -171,7 +173,7 @@ function generateAllLinks() {
         var listUsersNode = document.getElementById(listId);
 
         for (var i = 0; i < users.length; i++) {
-            userInfos[users[i].name] = generateUserInfoDiv(users[i]);
+            // userInfos[users[i].name] = generateUserInfoDiv(users[i]);
             var userNode = generateLink(users[i]);
             listUsersNode.appendChild(userNode); 
         };
