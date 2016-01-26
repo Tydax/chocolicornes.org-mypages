@@ -109,7 +109,6 @@ function generateLink(user) {
 
     divNode.appendChild(imgNode);
 
-    /*
     // Add function when hovering
     liNode.addEventListener("mouseover", function() {
         if (liNode != currentLiNode) {
@@ -137,7 +136,7 @@ function generateLink(user) {
         userInfoNode.className = user.className;
         currentLiNode = liNode;
         currentUser = user;
-    }, false); */
+    }, false);
 
     return divNode;
 }
