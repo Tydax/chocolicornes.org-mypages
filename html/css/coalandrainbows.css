@@ -23,7 +23,7 @@ html, body {
 
 #header {
     background-color: #303030;
-    box-shadow: 0 0.15em 0.30em #606060;
+    box-shadow: 0 0.1em 0.30em #606060;
     min-height: 38%;
 }
 
@@ -50,14 +50,17 @@ html, body {
 #list_users .list_user_link {
     border-bottom-left-radius: 0.2em;
     border-bottom-right-radius: 0.2em;
-    box-shadow: 0.15em 0.15em 0.30em #202020;
+    box-shadow: 0.15em 0.15em 0.30em #303030;
     cursor: pointer;
     margin: 2em;
+    width: 125px;
 }
 
 .list_user_img {
     border-top-left-radius: 0.2em;
     border-top-right-radius: 0.2em;
+    border: none;
+    display: block;
 }
 
 .list_users_name {
