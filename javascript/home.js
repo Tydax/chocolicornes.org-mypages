@@ -165,8 +165,8 @@ function showUserInfo(user) {
 /* Generates all the links loading the file */
 function generateAllLinks(users) {
   // Ajax call when users is undefined
-  if (user == undefined) {
-    var filename = "javascript/list_of_users.json";
+  if (users == undefined) {
+    var filename = "javascript/list_of_users.js";
     loadData(filename, function(response) {
         var users = JSON.parse(response);
         generateAllLinks(users);
@@ -187,28 +187,28 @@ function generateAllLinks(users) {
 (function() {
   var users = [
     {
-        "className": "mediumyellow",
-        "name": "Tydax",
-        "imgURL": "img/panda_square250.png",
-        "links": [],
-        "birthDate": "29/07/1993",
-        "quote": "I make your interface fabulous!"
+        className: "mediumyellow",
+        name: "Tydax",
+        imgURL: "img/panda_square250.png",
+        links: [],
+        birthDate: "29/07/1993",
+        quote: "I make your interface fabulous!"
     },
     {
-        "className": "mediumblue",
-        "name": "non0w",
-        "imgURL": "img/mimiemathy_square250.png",
-        "links": [],
-        "birthDate": "05/04/1993",
-        "quote": "I love free software!"
+        className: "mediumblue",
+        name: "non0w",
+        imgURL: "img/mimiemathy_square250.png",
+        links: [],
+        birthDate: "05/04/1993",
+        quote: "I love free software!"
     },
     {
-          "className": "mediumgreen",
-          "name": "T-Brawl",
-          "imgURL": "img/drmario_square.png",
-          "links": [],
-          "birthDate": "22/06/1990",
-          "quote": "get r3kt"
+          className: "mediumgreen",
+          name: "T-Brawl",
+          imgURL: "img/drmario_square.png",
+          links: [],
+          birthDate: "22/06/1990",
+          quote: "get r3kt"
       }
     ];
   generateAllLinks(users);
