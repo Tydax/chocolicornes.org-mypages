@@ -19,7 +19,7 @@ function loadData(filename, callback) {
     xhr.addEventListener("readystatechange", function() {
         // Operation successful
         if (xhr.readyState === 4 && xhr.status === 200) {
-           callback(xhr.responseText); 
+           callback(xhr.responseText);
         }
 
     }, false);
@@ -36,11 +36,11 @@ function getCurrentDate() {
 
     if (dd < 10) {
         dd = '0' + dd;
-    } 
+    }
 
     if (mm < 10) {
         mm = '0' + mm
-    } 
+    }
 
     today = mm + '/' + dd + '/' + yyyy;
 
@@ -153,7 +153,7 @@ function showUserInfo(user) {
     for (var i = 0; i < baseInfo.children.length; i++) {
         baseInfo.removeChild(baseInfo.children[i]);
     };
-    
+
     if (user) {
         updateImage(user.imgURL);
         baseInfo.appendChild(userInfos[user.name]);
@@ -163,23 +163,53 @@ function showUserInfo(user) {
 }
 
 /* Generates all the links loading the file */
-function generateAllLinks() {
+function generateAllLinks(users) {
+  // Ajax call when users is undefined
+  if (user == undefined) {
     var filename = "javascript/list_of_users.json";
-    var listId = "list_users";
-
     loadData(filename, function(response) {
         var users = JSON.parse(response);
-        var listUsersNode = document.getElementById(listId);
-
-        for (var i = 0; i < users.length; i++) {
-            // userInfos[users[i].name] = generateUserInfoDiv(users[i]);
-            var userNode = generateLink(users[i]);
-            listUsersNode.appendChild(userNode); 
-        };
+        generateAllLinks(users);
     });
+  } else {
+    var listId = "list_users";
+    var listUsersNode = document.getElementById(listId);
+
+    for (var i = 0; i < users.length; i++) {
+        // userInfos[users[i].name] = generateUserInfoDiv(users[i]);
+        var userNode = generateLink(users[i]);
+        listUsersNode.appendChild(userNode);
+    };
+  }
 }
 
 /* Main function */
 (function() {
-    generateAllLinks();
+  var users = [
+    {
+        "className": "mediumyellow",
+        "name": "Tydax",
+        "imgURL": "img/panda_square250.png",
+        "links": [],
+        "birthDate": "29/07/1993",
+        "quote": "I make your interface fabulous!"
+    },
+    {
+        "className": "mediumblue",
+        "name": "non0w",
+        "imgURL": "img/mimiemathy_square250.png",
+        "links": [],
+        "birthDate": "05/04/1993",
+        "quote": "I love free software!"
+    },
+    {
+          "className": "mediumgreen",
+          "name": "T-Brawl",
+          "imgURL": "img/drmario_square.png",
+          "links": [],
+          "birthDate": "22/06/1990",
+          "quote": "get r3kt"
+      }
+    ];
+  generateAllLinks(users);
 })();
