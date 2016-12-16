@@ -179,8 +179,3 @@ function generateAllLinks() {
         };
     });
 }
-
-/* Main function */
-(function() {
-    generateAllLinks();
-})();
