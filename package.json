@@ -4,7 +4,7 @@
   "description": "Page de liste d'utilisateurs",
   "main": "index.html",
   "scripts": {
-    "test": "firefox index.html &"
+    "test": "firefox test/test_suite.html &"
   },
   "repository": {
     "type": "git",

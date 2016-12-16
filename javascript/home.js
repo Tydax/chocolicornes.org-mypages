@@ -19,7 +19,7 @@ function loadData(filename, callback) {
     xhr.addEventListener("readystatechange", function() {
         // Operation successful
         if (xhr.readyState === 4 && xhr.status === 200) {
-           callback(xhr.responseText); 
+           callback(xhr.responseText);
         }
 
     }, false);
@@ -36,13 +36,13 @@ function getCurrentDate() {
 
     if (dd < 10) {
         dd = '0' + dd;
-    } 
+    }
 
     if (mm < 10) {
         mm = '0' + mm
-    } 
+    }
 
-    today = mm + '/' + dd + '/' + yyyy;
+    today = dd + '/' + mm + '/' + yyyy;
 
     return today;
 }
@@ -148,7 +148,7 @@ function showUserInfo(user) {
     for (var i = 0; i < baseInfo.children.length; i++) {
         baseInfo.removeChild(baseInfo.children[i]);
     };
-    
+
     if (user) {
         updateImage(user.imgUrl);
         baseInfo.appendChild(userInfos[user.name]);
@@ -169,7 +169,7 @@ function generateAllLinks() {
         for (var i = 0; i < users.length; i++) {
             userInfos[users[i].name] = generateUserInfoDiv(users[i]);
             var userNode = generateLi(users[i]);
-            listUsersNode.appendChild(userNode); 
+            listUsersNode.appendChild(userNode);
         };
     });
 }
