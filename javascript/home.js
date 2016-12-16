@@ -49,7 +49,7 @@ function getCurrentDate() {
 
 function calculateAge(birthDate, todayDate) {
     if (!todayDate) {
-        var todayDate = getCurrentDate();        
+        todayDate = getCurrentDate();
     }
     var dataBirth = birthDate.split("/"),
         dataToday = todayDate.split("/");
@@ -61,10 +61,8 @@ function calculateAge(birthDate, todayDate) {
 
     var age = dataToday[2] - dataBirth[2];
 
-    if (dataToday[1] <= dataBirth[1]) {
-        if (dataToday[1] < dataBirth[1] || dataToday[0] < dataBirth[0]) {
-            return age - 1;
-        }
+    if (dataToday[1] <= dataBirth[1] && (dataToday[1] < dataBirth[1] || dataToday[0] < dataBirth[0])) {
+        return age - 1;
     }
 
     return age;
@@ -115,14 +113,14 @@ function generateLi(user) {
 
     // Add function when hovering
     liNode.addEventListener("mouseover", function() {
-        if (liNode != currentLiNode) {
+        if (liNode !== currentLiNode) {
             liNode.className = user.className;
         }
         showUserInfo(user);
     }, false);
 
     liNode.addEventListener("mouseout", function() {
-        if (liNode.className.indexOf("selected") == -1) {
+        if (liNode.className.indexOf("selected") === -1) {
             liNode.className = "";
         }
 
@@ -133,7 +131,7 @@ function generateLi(user) {
     liNode.addEventListener("click", function() {
         liNode.className += " selected";
         // Deselected currently selected node
-        if (currentLiNode && currentLiNode != liNode) {
+        if (currentLiNode && currentLiNode !== liNode) {
             currentLiNode.className = "";
         }
 
