@@ -1,4 +1,4 @@
 QUnit.testSuites([
     'test_information.html',
-    'test_node.html'
+    'test_usernode.html'
 ]);

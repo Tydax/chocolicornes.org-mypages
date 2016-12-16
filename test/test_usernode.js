@@ -1,5 +1,5 @@
 var userTest;
-QUnit.module('node');
+QUnit.module('usernode');
 
 (function () {
     userTest = {
