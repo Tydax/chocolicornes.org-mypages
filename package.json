@@ -1,0 +1,23 @@
+{
+  "name": "chocolicornes.org-mypages",
+  "version": "1.0.0",
+  "description": "Page de liste d'utilisateurs",
+  "main": "index.html",
+  "scripts": {
+    "test": "firefox index.html &"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tydax/chocolicornes.org-mypages.git"
+  },
+  "author": "Armand (Tydax)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tydax/chocolicornes.org-mypages/issues"
+  },
+  "homepage": "https://github.com/Tydax/chocolicornes.org-mypages#readme",
+  "devDependencies": {
+    "karma": "^1.3.0",
+    "qunitjs": "^2.1.0"
+  }
+}
