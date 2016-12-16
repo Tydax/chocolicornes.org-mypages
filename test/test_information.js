@@ -1,6 +1,4 @@
-QUnit.module('information', {
-
-});
+QUnit.module('information');
 
 QUnit.test('test_formatDate', function (assert) {
     assert.expect(9);
