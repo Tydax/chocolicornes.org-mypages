@@ -13,7 +13,7 @@ QUnit.module('usernode');
 
     var fixtureNode = document.getElementById('qunit-fixture');
     var userNode = generateUserInfoDiv(userTest);
-    fixtureNode.appendChild(userNode);
+    document.getElementsByTagName('body')[0].appendChild(userNode);
 })();
 
 QUnit.test('test creating user info node', function (assert) {
