@@ -34,7 +34,19 @@ QUnit.test('test_formatDate', function (assert) {
 });
 
 QUnit.test('test_calculateAge', function (assert) {
-    assert.expect(0);
+    assert.expect(5);
+    var currentDate, birthDate1, birthDate2, birthDate3, birthDate4, birthDate5;
 
-    // var
+    currentDate = '16/11/2016';
+    birthDate1 = '1/10/1993';
+    birthDate2 = '1/11/1993';
+    birthDate3 = '16/11/1993';
+    birthDate4 = '17/11/1993';
+    birthDate5 = '7/12/1993';
+
+    assert.equal(calculateAge(birthDate1, currentDate), 23, 'Month before current date');
+    assert.equal(calculateAge(birthDate2, currentDate), 23, 'Same month, but before current day');
+    assert.equal(calculateAge(birthDate3, currentDate), 23, 'Same date as current date');
+    assert.equal(calculateAge(birthDate4, currentDate), 22, 'Same month, but after current day');
+    assert.equal(calculateAge(birthDate4, currentDate), 22, 'Month after current date');
 })

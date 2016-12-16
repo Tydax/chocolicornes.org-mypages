@@ -48,10 +48,18 @@ function getCurrentDate() {
 }
 
 function calculateAge(birthDate, todayDate) {
-    var todayDate = getCurrentDate();
+    if (!todayDate) {
+        var todayDate = getCurrentDate();        
+    }
     var dataBirth = birthDate.split("/"),
-        dataToday = todayDate.split("/"),
-        age = dataToday[2] - dataBirth[2];
+        dataToday = todayDate.split("/");
+
+    for (var i = 0; i < dataToday.length; i++) {
+        dataBirth[i] = parseInt(dataBirth[i]);
+        dataToday[i] = parseInt(dataToday[i]);
+    }
+
+    var age = dataToday[2] - dataBirth[2];
 
     if (dataToday[1] <= dataBirth[1]) {
         if (dataToday[1] < dataBirth[1] || dataToday[0] < dataBirth[0]) {
