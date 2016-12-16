@@ -18,6 +18,5 @@
   "homepage": "https://github.com/Tydax/chocolicornes.org-mypages#readme",
   "devDependencies": {
     "karma": "^1.3.0",
-    "qunitjs": "^2.1.0"
   }
 }
