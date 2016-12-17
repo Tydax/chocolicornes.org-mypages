@@ -20,7 +20,7 @@
         name: 'T-Brawl',
         imgURL: 'img/drmario_square.png',
         links: [],
-        birthDate: '22/06/1990',
+        birthDate: '07/07/1990',
         quote: 'get r3kt'
     }
   ]
